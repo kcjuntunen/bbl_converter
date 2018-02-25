@@ -240,7 +240,6 @@ int max_chapter(int book) {
 		cout << "\n * " << res_ << " chapters in ";
 	}
 	sqlite3_finalize(stmt);
-	cout << "Book " << book << "Chapters=" << res_ << "\n";
 	return res_;
 }
 
