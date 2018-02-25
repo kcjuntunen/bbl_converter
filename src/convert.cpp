@@ -143,7 +143,7 @@ string convert_from_sword(string key, string version, int bookNo, int chapter, i
 }
 
 string convert_from_sqlite(string key, string version, int bookNo, int chapter, int verse) {
-	std::regex r("<((\w)-?(\w)?){4,}[^<]>");
+	std::regex r("<((\\w)-?(\\w)?){4,}[^<]>");
 	return std::regex_replace(get_sql_verse(bookNo, chapter, verse), r, "");
 }
 
