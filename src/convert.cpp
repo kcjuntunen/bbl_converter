@@ -45,8 +45,7 @@ string version = "ESV2011";
 string reference_db = "kjv.bbl.mybible";
 string output_db = "out.bbl.mybible";
 
-enum Testaments { OT = 0x02,
-									NT = 0x04 };
+enum Testaments { OT = 0x02, NT = 0x04 };
 inline Testaments operator|(Testaments x, Testaments y) {
 	return static_cast<Testaments>(static_cast<int>(x) | static_cast<int>(y));
 }
