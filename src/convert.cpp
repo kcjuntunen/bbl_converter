@@ -77,16 +77,18 @@ int main(int argc, char** argv) {
 	string filename = "./verse.list";
 	bool sword = false;
 	for (uint8_t i = 0; i < argc; i++) {
-		if ((i + 1 < argc) && strcmp(argv[i], "-sv") == 0 ) {
-			version = argv[i + 1];
-			sword = true;
+		if (i + 1 < argc) {
+			if (strcmp(argv[i], "-sv") == 0 ) {
+				version = argv[i + 1];
+				sword = true;
+			}
+			if (strcmp(argv[i], "-ref") == 0)
+				reference_db = argv[i + 1];
+			if (strcmp(argv[i], "-vl") == 0)
+				filename = argv[i + 1];
+			if (strcmp(argv[i], "-o") == 0)
+				output_db = argv[i + 1];
 		}
-		if ((i + 1 < argc) && strcmp(argv[i], "-ref") == 0)
-			reference_db = argv[i + 1];
-		if ((i + 1 < argc) && strcmp(argv[i], "-vl") == 0)
-			filename = argv[i + 1];
-		if ((i + 1 < argc) && strcmp(argv[i], "-o") == 0)
-			output_db = argv[i + 1];
 		if (strcmp(argv[i], "-nt") == 0)
 			which_testament = Testaments::NT;
 		if (strcmp(argv[i], "-ot") == 0)
